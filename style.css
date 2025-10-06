@@ -207,12 +207,17 @@ nav a:hover{
   font-weight:700;
   cursor:pointer;
   transition:all var(--transition);
+
+  text-decoration: none; /* أي خط تحت النص يختفي */
+  text-align: center;
+  display: inline-block;
 }
 
 .buy-btn:hover{
   transform:translateY(-4px);
   box-shadow:0 10px 30px rgba(7,124,200,0.12);
   border-color:var(--accent-2);
+  text-decoration: none; /* يبقى بدون خط أثناء hover */
 }
 
 /* Split Sections */
