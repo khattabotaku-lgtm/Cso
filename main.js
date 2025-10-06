@@ -3,7 +3,7 @@ const products = [
   {
     title: "Cyber Tool 1",
     desc: "Description of Cyber Tool 1",
-    img: "images/tool1.jpg",
+    img: "images/ethical hacking book cover.png",
     price: "$20",
     link: "https://gumroad.com/product1"
   },
