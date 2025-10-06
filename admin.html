@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,3 +40,46 @@
   <script src="admin.js"></script>
 </body>
 </html>
+=======
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CSO Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">CSO</div>
+      <div>
+        <div style="font-weight:800">CSO Admin</div>
+        <div style="font-size:13px;color:var(--muted)">Manage your products</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <section class="card-panel" style="max-width:800px;margin:40px auto;">
+    <h3>Admin Panel</h3>
+    <p class="desc">Add, delete, or edit products dynamically.</p>
+    <form id="adminForm">
+      <input type="text" id="prodTitle" placeholder="Product Title" required>
+      <input type="text" id="prodDesc" placeholder="Description" required>
+      <input type="text" id="prodImg" placeholder="Image URL" required>
+      <input type="text" id="prodPrice" placeholder="Price (e.g. $10)" required>
+      <input type="text" id="prodLink" placeholder="Gumroad Link" required>
+      <button class="btn" type="submit">Add Product</button>
+    </form>
+
+    <h4 style="margin-top:24px;">Existing Products</h4>
+    <div id="productsList"></div>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>
+>>>>>>> 27c60259342b59f16c5a1912d2ce8ebc3988cfbf
