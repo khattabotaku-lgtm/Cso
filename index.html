@@ -1,83 +1,263 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CSO — Cyber Security Digital Products Store</title>
-  <meta name="description" content="CSO — Digital marketplace for cybersecurity tools and courses. Responsive design with hover animations and Gumroad integration.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSO - Cybersecurity Digital Products</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0f1a;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15,23,42,0.95);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      color: #38bdf8;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, #0f172a, #0a0f1a);
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #facc15;
+    }
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 600px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #38bdf8;
+      color: #0a0f1a;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #0ea5e9;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #38bdf8;
+    }
+    .features, .products, .testimonials, .faq {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .feature, .card, .testimonial, .faq-item {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      color: #facc15;
+    }
+    .price {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    footer {
+      background: #0f172a;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+  </style>
 </head>
 <body>
-  <header class="fade-in">
-    <div class="brand">
-      <div class="logo">CSO</div>
-      <div>
-        <div style="font-weight:800">CSO</div>
-        <div style="font-size:13px;color:var(--muted)">Cyber Security Online — Digital Store</div>
-      </div>
-    </div>
+
+  <header>
+    <h1>CSO</h1>
     <nav>
-      <a href="#main">Main</a>
+      <a href="#features">Features</a>
       <a href="#products">Products</a>
       <a href="#about">About</a>
-      <a href="#connect">Contact</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta">Get Started</a>
     </nav>
   </header>
 
-  <main id="main" class="hero fade-in stagger-1">
-    <div>
-      <h1>CSO — Cyber Security Tools & Courses</h1>
-      <p>Digital tools, scripts, guides, and e-learning content for cybersecurity professionals and learners. Secure, easy to use, and directly integrated with Gumroad for checkout.</p>
-      <div class="cta">
-        <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Explore Products</button>
-      </div>
-    </div>
-  </main>
-
-  <section id="products" class="products fade-in stagger-2">
-    <h2>Products</h2>
-    <p style="color:var(--muted)">Products are added via code in main.js</p>
-    <div class="products-grid" id="productsGrid"></div>
+  <section class="hero">
+    <h2>Cybersecurity Digital Products for the Future</h2>
+    <p>At CSO, we provide high-quality cybersecurity eBooks, tools, and resources to help you learn, protect, and grow in the digital world.</p>
+    <a href="#products" class="btn">Explore Products</a>
   </section>
 
-  <section class="split">
-    <!-- About Us -->
-    <div id="about" class="card-panel fade-in stagger-3">
-      <h3>About Us</h3>
-      <p class="desc">CSO is a digital marketplace for the cybersecurity community. We provide high-quality digital products, learning resources, and tools to help professionals and enthusiasts grow safely and legally.</p>
-      <div class="about-cards">
-        <div class="about-card">
-          <h4>Legal & Safe</h4>
-          <p>All products are verified and fully legal for learning and testing purposes.</p>
-        </div>
-        <div class="about-card">
-          <h4>Support & Documentation</h4>
-          <p>Each product comes with detailed guides and responsive technical support.</p>
-        </div>
-        <div class="about-card">
-          <h4>Updates & Discounts</h4>
-          <p>Regular updates, exclusive deals, and access to new tools for our users.</p>
-        </div>
+  <section id="features">
+    <h2 class="section-title">Why Choose CSO?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>🛡️ Expert Knowledge</h3>
+        <p>All our resources are created by cybersecurity professionals with real-world experience.</p>
+      </div>
+      <div class="feature">
+        <h3>⚡ Instant Access</h3>
+        <p>Download your digital products immediately after purchase.</p>
+      </div>
+      <div class="feature">
+        <h3>💻 Practical Tools</h3>
+        <p>From eBooks to penetration testing kits, we provide actionable content.</p>
       </div>
     </div>
-
-    <!-- Contact Us -->
-    <aside id="connect" class="card-panel fade-in">
-      <h3>Contact Us</h3>
-      <p class="desc">Send us a message for collaboration or support.</p>
-        <form id="contactForm" action="https://formspree.io/f/mzzjvvnv" method="POST">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="_replyto" placeholder="Email" required>
-          <textarea name="message" rows="4" placeholder="Message" required></textarea>
-          <button class="buy-btn" type="submit">Send</button>
-        </form>
-    </aside>
   </section>
 
-  <footer style="max-width:1200px;margin:28px auto;color:var(--muted);text-align:center">
-    <small>© CSO — All Rights Reserved</small>
+  <section id="products">
+    <h2 class="section-title">Our Products</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Cybersecurity eBook">
+        <h3>Cybersecurity eBook</h3>
+        <p>Learn ethical hacking & defense strategies step by step.</p>
+        <div class="price">$29</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Security Tools Pack">
+        <h3>Security Tools Pack</h3>
+        <p>Collection of essential penetration testing tools.</p>
+        <div class="price">$49</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Advanced Training">
+        <h3>Advanced Training</h3>
+        <p>Hands-on course to master cyber defense.</p>
+        <div class="price">$99</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About CSO</h2>
+    <p style="text-align:center; max-width:700px; margin:auto; color:#cbd5e1;">
+      CSO (Cyber Security Online) is a platform dedicated to providing top-quality digital products for cybersecurity learners and professionals. 
+      Our mission is to empower individuals with the tools and knowledge needed to stay safe in the digital era.
+    </p>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"The CSO eBook gave me everything I needed to start my ethical hacking journey. Highly recommended!"</p>
+        <strong>- Alex P.</strong>
+      </div>
+      <div class="testimonial">
+        <p>"The tools pack saved me weeks of searching and testing. Great value for money."</p>
+        <strong>- Maria K.</strong>
+      </div>
+      <div class="testimonial">
+        <p>"I loved the advanced training, practical and straight to the point."</p>
+        <strong>- John D.</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>How do I receive my products?</h4>
+        <p>All products are digital. You can download them instantly after purchase.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I get a refund?</h4>
+        <p>Yes, we offer a 7-day refund policy if you’re not satisfied.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do I need prior knowledge?</h4>
+        <p>No, our resources are designed for beginners and advanced learners alike.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" style="text-align:center;">
+    <h2>Ready to Boost Your Cybersecurity Skills?</h2>
+    <p>Join thousands of learners and professionals who trust CSO.</p>
+    <a href="#products" class="btn">Get Started Now</a>
+  </section>
+
+  <footer>
+    © 2025 CSO. All Rights Reserved.
   </footer>
 
-  <script src="main.js"></script>
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.feature, .card, .testimonial, .faq-item');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(fader => {
+      observer.observe(fader);
+    });
+  </script>
+
 </body>
 </html>
