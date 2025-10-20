@@ -877,7 +877,7 @@
             <li><a href="#books">Books</a></li>
             <li><a href="#testimonials">Reviews</a></li>
         </ul>
-        <button class="cta-btn">Shop Now</button>
+        <button class="cta-btn" id="scrollToBooksBtn">Shop Now</button>
     </nav>
 
     <!-- Hero Section -->
@@ -888,21 +888,21 @@
             <p>Comprehensive cybersecurity books covering Social Engineering, Ethical Hacking, Networks, and Kali Linux. From beginner to advanced level.</p>
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number">15K+</span>
+                    <span class="stat-number">10K+</span>
                     <span class="stat-label">Readers</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">20+</span>
+                    <span class="stat-number">10+</span>
                     <span class="stat-label">Books</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">4.8★</span>
+                    <span class="stat-number">4.5★</span>
                     <span class="stat-label">Avg Rating</span>
                 </div>
             </div>
             <div class="hero-buttons">
-                <button class="btn-primary">Browse Books</button>
-                <button class="btn-secondary">View Sample</button>
+                <button class="btn-primary" id="Browse">Browse Books</button>
+                <button class="btn-secondary" id="ViewSample">View Sample</button>
             </div>
         </div>
     </section>
@@ -942,29 +942,6 @@
     <section class="books" id="books">
         <h2 class="section-title">Featured Books</h2>
         <div class="books-grid">
-            <!-- Social Engineering Books -->
-            <div class="book-card">
-                <div class="book-content">
-                    <div class="book-badge">Bestseller</div>
-                    <p class="book-description">Complete guide to social engineering techniques, psychological tactics, and real-world attack scenarios with defense strategies.</p>
-                    <div class="book-details">
-                        <div class="book-detail">
-                            <div class="detail-label">Pages</div>
-                            <div class="detail-value">456</div>
-                        </div>
-                        <div class="book-detail">
-                            <div class="detail-label">Level</div>
-                            <div class="detail-value">Beginner</div>
-                        </div>
-                        <div class="book-detail">
-                            <div class="detail-label">Format</div>
-                            <div class="detail-value">PDF + EPUB</div>
-                        </div>
-                    </div>
-                    <div class="book-price">$29.99</div>
-                    <button class="btn-buy-book">Buy Now</button>
-                </div>
-            </div>
 
             <div class="book-card">
                 <div class="book-cover">
@@ -991,7 +968,7 @@
                         </div>
                     </div>
                     <div class="book-price">$34.99</div>
-                    <button class="btn-buy-book">Buy Now</button>
+                    <button class="btn-buy-book" >Buy Now</button>
                 </div>
             </div>
 
@@ -1221,7 +1198,7 @@
     <section class="cta-section">
         <h2>Start Your Cybersecurity Journey Today</h2>
         <p>Join thousands of professionals who have mastered cybersecurity through our comprehensive book collection.</p>
-        <button class="cta-btn-large">Browse All Books</button>
+        <button class="cta-btn-large" id="Browsebooks">Browse All Books</button>
     </section>
 
     <!-- Footer -->
@@ -1241,12 +1218,54 @@
             <div class="powered-by">🚀 Powered by Horizon AI from Hodtinger</div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('scrollToBooksBtn');
+
+            if (button) {
+                button.addEventListener('click', function() {
+                    window.location.hash = 'books';
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('Browsebooks');
+
+            if (button) {
+                button.addEventListener('click', function() {
+                    window.location.hash = 'books';
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('Browse');
+
+            if (button) {
+                button.addEventListener('click', function() {
+                    window.location.hash = 'books';
+                });
+            }
+        });
+        function openLinkInNewWindow(className, url) {
+        const buttons = document.querySelectorAll(`.${className}`);
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+            window.open(url, '_blank'); 
+            });
+        });
+        }
+        openLinkInNewWindow('btn-buy-book', 'https://www.gumraod.com');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('ViewSample');
+
+            if (button) {
+                button.addEventListener('click', function() {
+                    window.location.hash = 'testimonials';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-<!-- -cover">
-                    <div class="book-icon">🎯</div>
-                    <div class="book-category">Social Engineering</div>
-                    <div class="book-title">Human Hacking</div>
-                    <div class="book-author">by Christopher Hadnagy</div>
-                </div>
-                <div class -->
