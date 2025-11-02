@@ -1,47 +1,113 @@
+// main.js - JavaScript for CSO Academy Book Store
+
 document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('scrollToBooksBtn');
+    // روابط المنتجات (يمكن تحديثها حسب الحاجة)
+    const productLinks = {
+        'social-engineering': 'https://example.com/buy/social-engineering',
+        'ethical-hacking-handbook': 'https://example.com/buy/ethical-hacking-handbook',
+        'ethical-hacking-challenges': 'https://example.com/buy/ethical-hacking-challenges',
+        'computer-networks': 'https://example.com/buy/computer-networks',
+        'security-terminology': 'https://example.com/buy/security-terminology',
+        'kali-linux-handbook': 'https://example.com/buy/kali-linux-handbook'
+    };
 
-    if (button) {
-        button.addEventListener('click', function() {
-            window.location.hash = 'books';
+    // معالجة أحداث الأزرار الرئيسية
+    document.getElementById('scrollToBooksBtn').addEventListener('click', function() {
+        document.getElementById('books').scrollIntoView({ 
+            behavior: 'smooth' 
         });
-    }
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('Browsebooks');
-
-    if (button) {
-        button.addEventListener('click', function() {
-            window.location.hash = 'books';
-        });
-    }
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('Browse');
-
-    if (button) {
-        button.addEventListener('click', function() {
-            window.location.hash = 'books';
-        });
-    }
-});
-function openLinkInNewWindow(className, url) {
-const buttons = document.querySelectorAll(`.${className}`);
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-    window.open(url, '_blank'); 
     });
-});
-}
-openLinkInNewWindow('btn-buy-book', 'https://www.gumraod.com');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('ViewSample');
-
-    if (button) {
-        button.addEventListener('click', function() {
-            window.location.hash = 'testimonials';
+    document.getElementById('Browse').addEventListener('click', function() {
+        document.getElementById('books').scrollIntoView({ 
+            behavior: 'smooth' 
         });
+    });
+
+    document.getElementById('ViewSample').addEventListener('click', function() {
+        window.open('https://example.com/sample', '_blank');
+    });
+
+    document.getElementById('Browsebooks').addEventListener('click', function() {
+        document.getElementById('books').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+
+    // معالجة أحداث أزرار "Buy Now" لكل منتج
+    document.querySelectorAll('.btn-buy-book').forEach((button, index) => {
+        button.addEventListener('click', function() {
+            // تحديد المنتج بناءً على الفهرس
+            let productKey;
+            switch(index) {
+                case 0:
+                    productKey = 'social-engineering';
+                    break;
+                case 1:
+                    productKey = 'ethical-hacking-handbook';
+                    break;
+                case 2:
+                    productKey = 'ethical-hacking-challenges';
+                    break;
+                case 3:
+                    productKey = 'computer-networks';
+                    break;
+                case 4:
+                    productKey = 'security-terminology';
+                    break;
+                case 5:
+                    productKey = 'kali-linux-handbook';
+                    break;
+                default:
+                    productKey = 'default';
+            }
+            
+            // الانتقال إلى صفحة المنتج
+            if(productLinks[productKey]) {
+                window.open(productLinks[productKey], '_blank');
+            } else {
+                alert('رابط الشراء غير متوفر حالياً لهذا المنتج');
+            }
+        });
+    });
+
+    // إضافة تأثيرات للتنقل السلس
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    });
+
+    // إضافة تأثيرات للبطاقات عند التمرير (بدون التأثير على hover)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('card-visible');
+            }
+        });
+    }, observerOptions);
+
+    // تطبيق تأثيرات الظهور على البطاقات
+    const cards = document.querySelectorAll('.category-card, .book-card, .testimonial-card');
+    cards.forEach(card => {
+        card.classList.add('card-hidden');
+        observer.observe(card);
+    });
+
+    // تحديث السنة في الفوتر تلقائياً
+    const currentYear = new Date().getFullYear();
+    const copyrightText = document.querySelector('.footer p');
+    if (copyrightText) {
+        copyrightText.textContent = `© ${currentYear} CSO Academy - Cybersecurity Learning Platform. All rights reserved.`;
     }
 });

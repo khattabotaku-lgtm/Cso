@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CSO Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #fff;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 60px;
+            background: rgba(10, 22, 40, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4ff;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 15px;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        /* ===== HERO ===== */
+        .page-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a5e 40%, #0f3d5e 100%);
+            color: white;
+            padding: 120px 60px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .page-hero p {
+            font-size: 20px;
+            color: #b0d4ff;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== CONTENT ===== */
+        .content-section {
+            padding: 80px 60px;
+            background: linear-gradient(180deg, #f5f7fa 0%, #eef2f8 100%);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .content-section h2 {
+            color: #0a1628;
+            font-size: 32px;
+            margin: 40px 0 20px;
+            font-weight: 800;
+            border-bottom: 3px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+
+        .content-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-section h3 {
+            color: #0a1628;
+            font-size: 24px;
+            margin: 30px 0 15px;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            color: #666;
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1));
+            border-left: 4px solid #00d4ff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background: #0a1628;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #051015;
+            color: #888;
+            padding: 80px 60px;
+            text-align: center;
+            border-top: 2px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 35px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: #00ffff;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        .powered-by {
+            margin-top: 40px;
+            font-size: 16px;
+            color: #00d4ff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .page-hero {
+                padding: 100px 20px 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+
+            .content-section {
+                padding: 60px 20px;
+            }
+
+            .content-container {
+                padding: 30px 20px;
+            }
+
+            .footer {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">CSO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+        <a href="index.html#books" class="cta-btn">Shop Books</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy and data security are our top priorities</p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Introduction</h2>
+            <p>At CSO Academy, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.</p>
+
+            <div class="highlight-box">
+                <p><strong>Last Updated:</strong> January 1, 2025</p>
+                <p>By using our website, you consent to the data practices described in this policy.</p>
+            </div>
+
+            <h2>Information We Collect</h2>
+            
+            <h3>Personal Information</h3>
+            <p>We may collect personal information that you voluntarily provide to us when you:</p>
+            <ul>
+                <li>Register for an account</li>
+                <li>Purchase our books or services</li>
+                <li>Subscribe to our newsletter</li>
+                <li>Contact our support team</li>
+                <li>Participate in surveys or promotions</li>
+            </ul>
+
+            <h3>Automatically Collected Information</h3>
+            <p>When you visit our website, we automatically collect certain information about your device, including:</p>
+            <ul>
+                <li>IP address and location data</li>
+                <li>Browser type and version</li>
+                <li>Pages you visit and time spent</li>
+                <li>Referring website addresses</li>
+                <li>Device information and operating system</li>
+            </ul>
+
+            <h2>How We Use Your Information</h2>
+            <p>We use the information we collect for various purposes:</p>
+            <ul>
+                <li>To provide and maintain our services</li>
+                <li>To process your transactions and deliver products</li>
+                <li>To personalize your experience and provide relevant content</li>
+                <li>To communicate with you about updates, security alerts, and support</li>
+                <li>To improve our website and services</li>
+                <li>To detect and prevent fraud and security breaches</li>
+                <li>To comply with legal obligations</li>
+            </ul>
+
+            <h2>Data Security</h2>
+            <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+            <ul>
+                <li>SSL encryption for all data transmissions</li>
+                <li>Regular security assessments and updates</li>
+                <li>Access controls and authentication procedures</li>
+                <li>Secure payment processing through trusted partners</li>
+            </ul>
+
+            <h2>Third-Party Services</h2>
+            <p>We may employ third-party companies and individuals to facilitate our services, provide services on our behalf, or assist us in analyzing how our services are used. These third parties have access to your personal information only to perform these tasks and are obligated not to disclose or use it for any other purpose.</p>
+
+            <h2>Your Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+            <ul>
+                <li>The right to access and receive a copy of your personal data</li>
+                <li>The right to rectify inaccurate or incomplete information</li>
+                <li>The right to erasure of your personal data</li>
+                <li>The right to restrict or object to processing</li>
+                <li>The right to data portability</li>
+                <li>The right to withdraw consent</li>
+            </ul>
+
+            <h2>Cookies and Tracking</h2>
+            <p>We use cookies and similar tracking technologies to track activity on our website and hold certain information. Cookies are files with a small amount of data that may include an anonymous unique identifier. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <p>Email: privacy@cso-academy.com</p>
+                <p>Phone: +1 (800) CSO-PRIVACY</p>
+                <p>Address: 123 Cybersecurity Lane, Tech City, TC 12345</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CSO Academy - Cybersecurity Learning Platform. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+
+            </div>
+            <p>Email: books@cso-academy.com | Support: support@cso-academy.com</p>
+            <p>Phone: +1 (800) CSO-BOOKS</p>
+            <div class="powered-by">Powered by Cybersecurity Excellence</div>
+        </div>
+    </footer>
+</body>
+</html>

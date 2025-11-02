@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - CSO Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #fff;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 60px;
+            background: rgba(10, 22, 40, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4ff;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 15px;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        /* ===== HERO ===== */
+        .page-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a5e 40%, #0f3d5e 100%);
+            color: white;
+            padding: 120px 60px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .page-hero p {
+            font-size: 20px;
+            color: #b0d4ff;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== CONTENT ===== */
+        .content-section {
+            padding: 80px 60px;
+            background: linear-gradient(180deg, #f5f7fa 0%, #eef2f8 100%);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .content-section h2 {
+            color: #0a1628;
+            font-size: 32px;
+            margin: 40px 0 20px;
+            font-weight: 800;
+            border-bottom: 3px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+
+        .content-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-section h3 {
+            color: #0a1628;
+            font-size: 24px;
+            margin: 30px 0 15px;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            color: #666;
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 153, 255, 0.1));
+            border-left: 4px solid #00d4ff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 77, 77, 0.1), rgba(255, 0, 0, 0.1));
+            border-left: 4px solid #ff4d4d;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background: #0a1628;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #051015;
+            color: #888;
+            padding: 80px 60px;
+            text-align: center;
+            border-top: 2px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 35px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: #00ffff;
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        .powered-by {
+            margin-top: 40px;
+            font-size: 16px;
+            color: #00d4ff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .page-hero {
+                padding: 100px 20px 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+
+            .content-section {
+                padding: 60px 20px;
+            }
+
+            .content-container {
+                padding: 30px 20px;
+            }
+
+            .footer {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">CSO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+        <a href="index.html#books" class="cta-btn">Shop Books</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <h1>Terms of Service</h1>
+        <p>Please read these terms carefully before using our services</p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Acceptance of Terms</h2>
+            <p>By accessing and using CSO Academy's website, products, and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these terms, please do not use this site or our services.</p>
+
+            <div class="highlight-box">
+                <p><strong>Last Updated:</strong> January 1, 2025</p>
+                <p>These Terms of Service govern your use of CSO Academy's website and digital products.</p>
+            </div>
+
+            <h2>Use License</h2>
+            <p>Permission is granted to temporarily access the materials (information or software) on CSO Academy's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+            <ul>
+                <li>Modify or copy the materials</li>
+                <li>Use the materials for any commercial purpose or public display</li>
+                <li>Attempt to decompile or reverse engineer any software contained on CSO Academy's website</li>
+                <li>Remove any copyright or other proprietary notations from the materials</li>
+                <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+            </ul>
+
+            <h2>Digital Products</h2>
+            <h3>Book Purchases</h3>
+            <p>When you purchase digital books from CSO Academy:</p>
+            <ul>
+                <li>You receive a non-exclusive, non-transferable license to use the digital content</li>
+                <li>All sales are final - no refunds are provided for digital products</li>
+                <li>You may not redistribute, resell, or share the digital content</li>
+                <li>The content is for your personal educational use only</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Important:</strong> Unauthorized distribution of our digital content is strictly prohibited and may result in legal action.</p>
+            </div>
+
+            <h2>User Accounts</h2>
+            <p>When you create an account with us, you must provide accurate, complete, and current information. You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your account and password</li>
+                <li>All activities that occur under your account</li>
+                <li>Notifying us immediately of any unauthorized use of your account</li>
+                <li>Ensuring that you exit from your account at the end of each session</li>
+            </ul>
+
+            <h2>Intellectual Property</h2>
+            <p>The Service and its original content, features, and functionality are and will remain the exclusive property of CSO Academy and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of CSO Academy.</p>
+
+            <h2>Payments and Billing</h2>
+            <p>All purchases are processed through secure payment gateways. By providing payment information, you represent that you are authorized to use the payment method. We reserve the right to refuse or cancel orders at our discretion.</p>
+
+            <h2>Disclaimer</h2>
+            <p>The materials on CSO Academy's website are provided on an 'as is' basis. CSO Academy makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+
+            <h2>Limitations</h2>
+            <p>In no event shall CSO Academy or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on CSO Academy's website.</p>
+
+            <h2>Governing Law</h2>
+            <p>These terms and conditions are governed by and construed in accordance with the laws of the United States and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+
+            <h2>Changes to Terms</h2>
+            <p>CSO Academy may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.</p>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                <p>Email: legal@cso-academy.com</p>
+                <p>Phone: +1 (800) CSO-LEGAL</p>
+                <p>Address: 123 Cybersecurity Lane, Tech City, TC 12345</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CSO Academy - Cybersecurity Learning Platform. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+
+            </div>
+            <p>Email: books@cso-academy.com | Support: support@cso-academy.com</p>
+            <p>Phone: +1 (800) CSO-BOOKS</p>
+            <div class="powered-by">Powered by Cybersecurity Excellence</div>
+        </div>
+    </footer>
+</body>
+</html>
