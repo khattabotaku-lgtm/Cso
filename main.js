@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // روابط المنتجات (يمكن تحديثها حسب الحاجة)
     const productLinks = {
         'social-engineering': 'https://example.com/buy/social-engineering',
-        'ethical-hacking-handbook': 'https://example.com/buy/ethical-hacking-handbook',
+        'ethical-hacking-handbook': 'https://khattab1.gumroad.com/l/owzvxn',
         'ethical-hacking-challenges': 'https://example.com/buy/ethical-hacking-challenges',
-        'computer-networks': 'https://example.com/buy/computer-networks',
+        'computer-networks': 'https://khattab1.gumroad.com/l/dgthz',
         'security-terminology': 'https://example.com/buy/security-terminology',
-        'kali-linux-handbook': 'https://example.com/buy/kali-linux-handbook'
+        'kali-linux-handbook': 'https://khattab1.gumroad.com/l/cpkhp'
     };
 
     // معالجة أحداث الأزرار الرئيسية

@@ -347,7 +347,9 @@
             border-radius: 3px;
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
         }
-
+        #Reader{
+            color: #ffffff;
+        }
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -801,11 +803,33 @@
             border-top: 1px solid rgba(0, 212, 255, 0.2);
         }
 
+             @media (max-width: 1024px) {
+            .navbar {
+                padding: 15px 30px;
+            }
+            
+            .nav-links {
+                gap: 25px;
+            }
+            
+            .hero {
+                padding: 120px 30px;
+            }
+            
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .categories, .books, .testimonials, .cta-section {
+                padding: 100px 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             .navbar {
+                padding: 15px 20px;
                 flex-direction: column;
                 gap: 20px;
-                padding: 20px;
             }
 
             .nav-links {
@@ -815,16 +839,18 @@
             }
 
             .hero {
-                padding: 80px 20px;
+                padding: 100px 20px;
                 min-height: auto;
             }
 
             .hero h1 {
                 font-size: 42px;
+                line-height: 1.3;
             }
 
             .hero p {
                 font-size: 18px;
+                line-height: 1.6;
             }
 
             .hero-stats {
@@ -832,9 +858,20 @@
                 margin-bottom: 40px;
             }
 
+            .stat-number {
+                font-size: 32px;
+            }
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 15px;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                padding: 16px 20px;
             }
 
             .categories, .books, .testimonials, .cta-section {
@@ -844,26 +881,165 @@
             .section-title {
                 font-size: 36px;
                 margin-bottom: 60px;
+                line-height: 1.3;
             }
 
             .categories-grid, .books-grid, .testimonial-grid {
                 gap: 30px;
             }
 
-            .category-card, .book-card {
-                padding: 35px 20px;
+            .category-card, .book-card, .testimonial-card {
+                padding: 35px 25px;
+            }
+
+            .category-icon {
+                font-size: 60px;
+            }
+
+            .category-card h3 {
+                font-size: 24px;
+            }
+
+            .book-cover {
+                padding: 40px 20px;
+                min-height: 220px;
+            }
+
+            .book-icon {
+                font-size: 50px;
+            }
+
+            .book-title {
+                font-size: 22px;
+            }
+
+            .book-content {
+                padding: 30px 25px;
             }
 
             .book-price {
                 font-size: 36px;
             }
 
+            .book-details {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .book-detail {
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
             .cta-section h2 {
                 font-size: 32px;
+                line-height: 1.3;
+            }
+
+            .cta-section p {
+                font-size: 18px;
+            }
+
+            .cta-btn-large {
+                width: 100%;
+                max-width: 280px;
             }
 
             .footer {
                 padding: 50px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .categories-grid, .books-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-card, .book-card, .testimonial-card {
+                padding: 30px 20px;
+            }
+            
+            .book-cover {
+                min-height: 200px;
+                padding: 30px 20px;
+            }
+            
+            .book-title {
+                font-size: 20px;
+            }
+            
+            .cta-section h2 {
+                font-size: 26px;
+            }
+            
+            .cta-section p {
+                font-size: 16px;
+            }
+        }
+
+        /* تحسينات إضافية للجوال */
+        @media (max-width: 768px) {
+            /* منع التمرير الأفقي */
+            body {
+                overflow-x: hidden;
+            }
+            
+            /* تحسين عرض العناصر */
+            .container, .hero-content, .categories-grid, 
+            .books-grid, .testimonial-grid, .footer-content {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            /* تحسين المسافات */
+            .hero {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            
+            /* تحسين حجم النصوص */
+            .logo {
+                font-size: 28px;
+            }
+            
+            .nav-links a {
+                font-size: 14px;
+            }
+            
+            .cta-btn {
+                padding: 12px 25px;
+                font-size: 14px;
             }
         }
     </style>
@@ -981,7 +1157,7 @@
                     <div class="book-author">by Damian Bates & Lee Phalen</div>
                 </div>
                 <div class="book-content">
-                    <div class="book-badge">Certification</div>
+                    <div class="book-badge">Official Guide</div>
                     <p class="book-description">A comprehensive guide to ethical hacking, covering cybersecurity fundamentals, penetration testing, tools, and techniques for legally identifying and fixing security vulnerabilities.</p>
                     <div class="book-details">
                         <div class="book-detail">
@@ -1010,7 +1186,7 @@
                     <div class="book-author">by Georgia Weidman</div>
                 </div>
                 <div class="book-content">
-                    <div class="book-badge">Essential</div>
+                    <div class="book-badge">Practical</div>
                     <p class="book-description">A hands-on guide with 100 practical ethical hacking challenges, from reconnaissance to advanced exploitation, for developing real-world penetration testing skills.</p>
                     <div class="book-details">
                         <div class="book-detail">
@@ -1069,7 +1245,7 @@
                     <div class="book-author">by Damian Bates & Lee Phalen</div>
                 </div>
                 <div class="book-content">
-                    <div class="book-badge">Certification</div>
+                    <div class="book-badge">Theoretical</div>
                     <p class="book-description">A comprehensive glossary defining essential cybersecurity terms, from core concepts and attack types to defense technologies, frameworks, and compliance standards.</p>
                     <div class="book-details">
                         <div class="book-detail">
@@ -1119,41 +1295,14 @@
                     <button class="btn-buy-book">Buy Now</button>
                 </div>
             </div>
-
-            <!-- <div class="book-card">
-                <div class="book-cover">
-                    <div class="book-icon">🐧</div>
-                    <div class="book-category">Kali Linux</div>
-                    <div class="book-title">Mastering Kali Linux</div>
-                    <div class="book-author">by Sahil Mohan Saif</div>
-                </div>
-                <div class="book-content">
-                    <div class="book-badge">Advanced</div>
-                    <p class="book-description">Advanced techniques for penetration testing using Kali Linux. Real-world labs and practical exercises included.</p>
-                    <div class="book-details">
-                        <div class="book-detail">
-                            <div class="detail-label">Pages</div>
-                            <div class="detail-value">722</div>
-                        </div>
-                        <div class="book-detail">
-                            <div class="detail-label">Level</div>
-                            <div class="detail-value">Advanced</div>
-                        </div>
-                        <div class="book-detail">
-                            <div class="detail-label">Format</div>
-                            <div class="detail-value">PDF + EPUB</div>
-                        </div>
-                    </div>
-                    <div class="book-price">$59.99</div>
-                    <button class="btn-buy-book">Buy Now</button>
-                </div> -->
+            
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
-        <h2 class="section-title">Reader Reviews</h2>
+        <h2 class="section-title" id="Reader">Reader Reviews</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
@@ -1210,8 +1359,7 @@
                 <a href="terms-of-service.html">Terms of Service</a>
                 <a href="about-us.html">About Us</a>
             </div>
-            <p>Email: books@cso-academy.com | Support: support@cso-academy.com</p>
-            <p>Phone: +1 (800) CSO-BOOKS</p>
+            <p>Email: cso-academy@proton.me</p>
         </div>
     </footer>
     <script src="main.js"></script>
