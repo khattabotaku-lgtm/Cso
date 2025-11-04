@@ -3,11 +3,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // روابط المنتجات (يمكن تحديثها حسب الحاجة)
     const productLinks = {
-        'social-engineering': 'https://example.com/buy/social-engineering',
+        'social-engineering': 'https://khattab1.gumroad.com/l/muqiqg',
         'ethical-hacking-handbook': 'https://khattab1.gumroad.com/l/owzvxn',
-        'ethical-hacking-challenges': 'https://example.com/buy/ethical-hacking-challenges',
+        'ethical-hacking-challenges': 'https://khattab1.gumroad.com/l/tqvfle',
         'computer-networks': 'https://khattab1.gumroad.com/l/dgthz',
-        'security-terminology': 'https://example.com/buy/security-terminology',
+        'security-terminology': 'https://khattab1.gumroad.com/l/qdsbri',
         'kali-linux-handbook': 'https://khattab1.gumroad.com/l/cpkhp'
     };
 
