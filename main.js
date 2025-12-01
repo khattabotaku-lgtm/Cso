@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('ViewSample').addEventListener('click', function() {
-        window.open('https://example.com/sample', '_blank');
+        document.getElementById('books').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
     });
 
     document.getElementById('Browsebooks').addEventListener('click', function() {
