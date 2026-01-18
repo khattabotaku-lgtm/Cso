@@ -602,6 +602,130 @@
             box-shadow: 0 12px 35px rgba(0, 255, 136, 0.4);
         }
 
+        /* ===== SPECIAL OFFER ===== */
+        .offer-section {
+            padding: 100px 60px;
+            background: linear-gradient(135deg, #0A192F 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 60px;
+            border-radius: 20px;
+            border: 3px solid rgba(0, 255, 136, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .offer-content h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #00FF88;
+            font-weight: 900;
+        }
+
+        .offer-price {
+            font-size: 72px;
+            font-weight: 900;
+            color: #00FF88;
+            margin-bottom: 15px;
+        }
+
+        .original-price {
+            font-size: 32px;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 15px;
+            position: relative;
+            top: -15px;
+        }
+
+        .offer-description {
+            font-size: 20px;
+            color: #b0d4ff;
+            margin-bottom: 30px;
+        }
+
+        .offer-features {
+            list-style: none;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            text-align: left;
+        }
+
+        .offer-features li {
+            padding: 12px 20px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .offer-features li:before {
+            content: "✓";
+            color: #00FF88;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .btn-offer {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            color: #000;
+            border: none;
+            padding: 22px 60px;
+            font-size: 22px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 900;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+            margin: 30px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .btn-offer:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.5);
+        }
+
+        .offer-note {
+            font-size: 16px;
+            color: #FFD700;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
         /* ===== TESTIMONIALS ===== */
         .testimonials {
             padding: 150px 60px;
@@ -803,7 +927,7 @@
             border-top: 1px solid rgba(0, 255, 136, 0.2);
         }
 
-             @media (max-width: 1024px) {
+        @media (max-width: 1024px) {
             .navbar {
                 padding: 15px 30px;
             }
@@ -820,7 +944,7 @@
                 font-size: 56px;
             }
             
-            .categories, .books, .testimonials, .cta-section {
+            .categories, .books, .offer-section, .testimonials, .cta-section {
                 padding: 100px 30px;
             }
         }
@@ -874,7 +998,7 @@
                 padding: 16px 20px;
             }
 
-            .categories, .books, .testimonials, .cta-section {
+            .categories, .books, .offer-section, .testimonials, .cta-section {
                 padding: 80px 20px;
             }
 
@@ -931,6 +1055,37 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+
+            /* Special Offer Mobile Styles */
+            .offer-section {
+                padding: 60px 20px;
+            }
+            
+            .offer-container {
+                padding: 40px 20px;
+            }
+            
+            .offer-content h3 {
+                font-size: 28px;
+            }
+            
+            .offer-price {
+                font-size: 48px;
+            }
+            
+            .original-price {
+                font-size: 24px;
+                top: -10px;
+            }
+            
+            .offer-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-offer {
+                padding: 18px 30px;
+                font-size: 18px;
             }
 
             .cta-section h2 {
@@ -997,6 +1152,14 @@
             
             .book-title {
                 font-size: 20px;
+            }
+            
+            .offer-content h3 {
+                font-size: 24px;
+            }
+            
+            .offer-price {
+                font-size: 36px;
             }
             
             .cta-section h2 {
@@ -1119,6 +1282,37 @@
         <h2 class="section-title">Featured Books</h2>
         <div class="books-grid">
 
+            <!-- Free Roadmap Book - FIRST BOOK -->
+            <div class="book-card" data-product="road-map">
+                <div class="book-cover">
+                    <div class="book-icon">🗺️</div>
+                    <div class="book-category">FREE GUIDE</div>
+                    <div class="book-title">Cybersecurity Career Roadmap</div>
+                    <div class="book-author">by CSO Academy Team</div>
+                </div>
+                <div class="book-content">
+                    <div class="book-badge">FREE DOWNLOAD</div>
+                    <p class="book-description">A complete 4-page guide to starting your cybersecurity career. Learn essential skills, certifications, and career paths in information security.</p>
+                    <div class="book-details">
+                        <div class="book-detail">
+                            <div class="detail-label">Pages</div>
+                            <div class="detail-value">4</div>
+                        </div>
+                        <div class="book-detail">
+                            <div class="detail-label">Level</div>
+                            <div class="detail-value">Beginner</div>
+                        </div>
+                        <div class="book-detail">
+                            <div class="detail-label">Format</div>
+                            <div class="detail-value">PDF</div>
+                        </div>
+                    </div>
+                    <div class="book-price">FREE</div>
+                    <button class="btn-buy-book">Download Now</button>
+                </div>
+            </div>
+
+            <!-- Social Engineering Book -->
             <div class="book-card" data-product="social-engineering">
                 <div class="book-cover">
                     <div class="book-icon">🎯</div>
@@ -1296,6 +1490,28 @@
                 </div>
             </div>
             
+        </div>
+    </section>
+
+    <!-- Special Offer Section - BEFORE TESTIMONIALS -->
+    <section class="offer-section">
+        <div class="offer-container">
+            <h2>🌟 SPECIAL OFFER 🌟</h2>
+            <div class="offer-content">
+                <div class="offer-badge">LIMITED TIME</div>
+                <h3>Get ALL 6 Premium Books for Only $4</h3>
+                <p class="offer-price">$4 <span class="original-price">$7</span></p>
+                <p class="offer-description">Save 43% when you purchase the complete cybersecurity bundle</p>
+                <ul class="offer-features">
+                    <li>✅ Social Engineering Mastery</li>
+                    <li>✅ Ethical Hacking Complete Guide</li>
+                    <li>✅ Network Security Fundamentals</li>
+                    <li>✅ Kali Linux Handbook</li>
+                    <li>✅ 100 Practical Challenges</li>
+                    <li>✅ Security Terminology Guide</li>
+                </ul>
+                <button class="btn-buy-book" id="bundleOffer">Get Complete Bundle - $4</button>
+                <p class="offer-note">📚 Total Value: $7 | Your Price: $4 | Save: $3 (43% OFF)</p>
             </div>
         </div>
     </section>
@@ -1364,4 +1580,4 @@
     </footer>
     <script src="main.js"></script>
 </body>
-</html> 
+</html>
